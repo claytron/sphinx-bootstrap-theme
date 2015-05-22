@@ -46,6 +46,10 @@
     '_static/bootstrap-sphinx.js'
   ]
 %}
+{% if not bootswatch_js_custom %}
+  {% set bootswatch_js_custom = [] %}
+{% endif %}
+{% set script_files = script_files + bootswatch_js_custom %}
 
 {%- set render_sidebar = (not embedded) and (not theme_nosidebar|tobool) and sidebars %}
 
